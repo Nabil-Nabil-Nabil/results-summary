@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    
+    --White:            hsl(0, 0%, 100%);
+    --Pale-blue:        hsl(221, 100%, 96%);
+    --Light-lavender:   hsl(241, 100%, 89%);
+    --Dark-gray-blue:   hsl(224, 30%, 27%);
+
+    --Light-red:        hsl(0, 100%, 67%);
+    --Orangey-yellow:   hsl(39, 100%, 56%);
+    --Green-teal:       hsl(166, 100%, 37%);
+    --Cobalt-blue:      hsl(234, 85%, 45%);
+
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+
+    --Violet-blue:      hsla(256, 72%, 46%, 1);
+    --Persian-blue:     hsla(241, 72%, 46%, 0);
+}
+
+body {
+    font-size: 18px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: white;
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Container *************************************** */
+.container {
+    width: 38.5rem;
+    display: flex;
+    box-shadow: 2px 2px 25px rgb(218, 218, 218);
+    border-radius: 2rem;
+    margin: 2rem;
+}
+.container > section {
+    flex: 50%;
+}
+@media (max-width: 560px) {
+    .container {
+        flex-direction: column;
+    }
+}
+@media (max-width: 375px) {
+    .container {
+        margin: 0;
+    }
+}
+
+
+/* Result Section *************************************** */
+.result-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1.7rem;
+    border-radius: 2rem;
+    background: linear-gradient(180deg, var(--Light-slate-blue), var(--Light-royal-blue));
+}
+@media (max-width: 375px) {
+    .result-section {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+/* "Your Result" Paragraph */
+.result-section > p:first-of-type {
+    margin: 0 0 1rem ;
+    color: #c9c2ff;
+    font-size: 1.3rem;
+}
+
+/* "Result" Section */
+.result-section .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 1rem;
+    width: 10.5rem;
+    aspect-ratio: 1;
+    text-align: center;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--Violet-blue), var(--Persian-blue));
+}
+.result-section .result > p:first-of-type {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: var(--White);
+}
+.result-section .result > p:last-of-type {
+    color: #8a7dff;
+}
+
+/* "Great" Header */
+.result-section > h1 {
+    margin-top: 1rem;
+    color: var(--White);
+}
+
+/* Last Paragraph */
+.result-section > p:last-of-type {
+    margin: 1rem 0 1rem;
+    padding: 0 1.5rem;
+    color: #b3b0ff;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* Summary Section *************************************** */
+.summary-section {
+    padding: 0 2rem 1rem;
+    border-radius: 2rem;
+    background-color: var(--White);
+}
+
+/* "Summary" Header */
+.summary-section > h1:first-of-type {
+    font-size: 1.3rem;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+/* All Points divs */
+.summary-section .points {
+    display: flex;
+    background-color: lightblue;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    font-size: 0.9rem;
+}
+.summary-section .points > div:first-of-type{
+    display: flex;
+}
+
+/* "Reaction" & "Memory" & "Verbal" & "Visual" Words */
+.summary-section .points > div:first-of-type p{
+    margin-left: 0.5rem;
+    font-weight: 800;
+}
+
+/* "Reaction" & "Memory" & "Verbal" & "Visual" Numbers */
+.summary-section .points > div:last-of-type p {
+    color: #9e96a2;
+}
+.summary-section .points > div:last-of-type p span {
+    font-weight: 800;
+    color: black;
+}
+
+/* "Reaction" div */
+.summary-section > div:first-of-type {
+    background-color: hsla(0, 100%, 67%, .1);
+}
+.summary-section > div:first-of-type > div:first-of-type p {
+    color: var(--Light-red);
+    margin-left: 0.5rem;
+    font-weight: 800;
+}
+
+/* "Memory" div */
+.summary-section > div:nth-of-type(2) {
+    background-color: hsla(39, 100%, 56%, .1);
+}
+.summary-section > div:nth-of-type(2) > div:first-of-type p {
+    color: var(--Orangey-yellow);
+}
+
+/* "Verbal" div */
+.summary-section > div:nth-of-type(3) {
+    background-color: hsla(166, 100%, 37%, .1);
+}
+.summary-section > div:nth-of-type(3) > div:first-of-type p {
+    color: var(--Green-teal);
+}
+
+/* "Visual" div */
+.summary-section > div:nth-of-type(4) {
+    background-color: hsla(234, 85%, 45%, .1);
+}
+.summary-section > div:nth-of-type(4) > div:first-of-type p {
+    color: var(--Cobalt-blue);
+}
+
+
+/* "Continue" Div */
+.summary-section .continue {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* "Continue" Button */
+.summary-section .continue button {
+    width: 100%;
+    background-color: var(--Dark-gray-blue);
+    padding: 0.8rem 0;
+    border-radius: 2rem;
+}
+.summary-section .continue button:hover {
+    background: linear-gradient(180deg, var(--Light-slate-blue), var(--Light-royal-blue));
+}
+
+/* "Continue" Link */
+.summary-section .continue a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #fbfeff;
+}
